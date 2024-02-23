@@ -8,11 +8,11 @@ export default function Document({name, userId, docId, createdOn, editedOn, getD
     let [display, setDisplay] = useState();
     
     function redirect(){
-        window.location.replace('http://localhost:3000/document/'+userId+'/'+docId);
+        window.location.replace('/document/'+userId+'/'+docId);
     }
 
     function deleteFile(){
-        fetch('http://localhost:3002/delete', {method: 'POST',
+        fetch('https://text-editor-server-new.onrender.com/delete', {method: 'POST',
             headers: {
                 "Content-Type": "application/json",
             }, 

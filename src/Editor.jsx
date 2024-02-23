@@ -38,7 +38,7 @@ export default function Editor() {
   let [user, setUser] = useState();
 
   function getDocuments(){
-    fetch('http://localhost:3002/documents/'+userId, {method: 'GET'})
+    fetch('https://text-editor-server-new.onrender.com/documents/'+userId, {method: 'GET'})
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
@@ -50,7 +50,7 @@ export default function Editor() {
   function saveExistingDocument(){
     console.log(content);
     // socket.emit("save-document", quill.getContents(), inputURL.value);
-    fetch('http://localhost:3002/save', {method: 'POST',
+    fetch('https://text-editor-server-new.onrender.com/save', {method: 'POST',
         headers: {
             "Content-Type": "application/json",
         }, 
@@ -90,7 +90,7 @@ export default function Editor() {
 // }, [socket, quill])
 
   function saveDocument(){
-    fetch('http://localhost:3002/save', {method: 'POST',
+    fetch('https://text-editor-server-new.onrender.com/save', {method: 'POST',
             headers: {
                 "Content-Type": "application/json",
             }, 
@@ -115,7 +115,7 @@ export default function Editor() {
 
 
   useEffect(() => {
-    const s = io("http://localhost:3001")
+    const s = io("https://text-editor-server-new.onrender.com")
     setSocket(s)
     return () => {
       s.disconnect()
@@ -184,7 +184,7 @@ export default function Editor() {
     if (socket == null || quill == null) return;
     function handle(){
       console.log('saving......'+documentId);
-      fetch('http://localhost:3002/save', {method: 'POST',
+      fetch('https://text-editor-server-new.onrender.com/save', {method: 'POST',
           headers: {
               "Content-Type": "application/json",
           }, 
@@ -287,7 +287,7 @@ export default function Editor() {
   }, [save]);
 
   useEffect(() => {
-    fetch('http://localhost:3002/getcreds', {method: 'POST',
+    fetch('https://text-editor-server-new.onrender.com/getcreds', {method: 'POST',
           headers: {
               "Content-Type": "application/json",
           }, 

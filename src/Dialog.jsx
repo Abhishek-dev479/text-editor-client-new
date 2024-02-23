@@ -29,7 +29,7 @@ export default function Dialog({share, removeDialog, currentUrl, content, userId
     function saveDocument(){
         // socket.emit("save-document", quill.getContents(), inputURL.value);
         if(input.length <= 0) return;
-        fetch('http://localhost:3002/save', {method: 'POST',
+        fetch('https://text-editor-server-new.onrender.com/save', {method: 'POST',
             headers: {
                 "Content-Type": "application/json",
             }, 
