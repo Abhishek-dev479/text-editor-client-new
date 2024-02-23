@@ -89,7 +89,7 @@ function Signup(){
         }
         // console.log(username+" "+password);
         console.log('fetching request...');
-        fetch('http://localhost:3002/signup', {method: 'POST',
+        fetch('https://text-editor-server-new.onrender.com/signup', {method: 'POST',
             headers: {
                 "Content-Type": "application/json",
             }, 
