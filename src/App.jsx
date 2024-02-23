@@ -98,7 +98,7 @@ function Signup(){
         })
         .then((res) => {
             console.log('response: '+res);
-            return res.json();
+            return res.text();
         })
         .then((res) => {
             console.log('response: +'+res);
