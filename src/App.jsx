@@ -97,10 +97,11 @@ function Signup(){
             body: JSON.stringify({email: input.email, password: input.password, username: input.username})
         })
         .then((res) => {
+            console.log('response: '+res);
             return res.json();
         })
         .then((res) => {
-            console.log(res);
+            console.log('response: +'+res);
             if(res.message == 'success'){
                 cookies.set('username', input.email);
                 cookies.set('password', input.password);
@@ -110,6 +111,7 @@ function Signup(){
         })
         .catch((err) => {
             console.log(err);
+            setMessage('Error');
         })
     }
     function changeInput(event){
