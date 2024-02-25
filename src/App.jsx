@@ -90,7 +90,6 @@ function Signup(){
         // console.log(username+" "+password);
         console.log('fetching request...');
         fetch('https://text-editor-server-new.onrender.com/signup', {method: 'POST',
-            mode: 'no-cors',
             headers: {
                 "Content-Type": "application/json",
             }, 
