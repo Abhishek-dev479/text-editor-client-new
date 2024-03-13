@@ -50,7 +50,7 @@ function Login(){
             if(res.userId != undefined){
                 cookies.set('username', input.email);
                 cookies.set('password', input.password);
-                window.location.replace("/document/"+res.userId+'/'+uuid(), {replace: true});
+                window.location.replace("/document/"+res.userId+'/'+uuid());
             }
             else setMessage('Wrong username or password');
         })
@@ -104,7 +104,9 @@ function Signup(){
             if(res.message == 'success'){
                 cookies.set('username', input.email);
                 cookies.set('password', input.password);
-                window.location.replace("/document/"+res.userId+'/'+uuid(), {replace: true});
+                let redirectUrl = "/document/"+res.userId+'/'+uuid();
+                console.log(redirectUrl);
+                window.location.replace(redirectUrl);
             }
             else setMessage(res.message);
         })
