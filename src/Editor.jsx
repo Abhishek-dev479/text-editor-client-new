@@ -133,6 +133,7 @@ export default function Editor() {
     })
 
     socket.emit("get-document", userId, documentId)
+    console.log('get-document event sent...');
   }, [socket, quill, documentId])
 
   useEffect(() => {
